@@ -29,26 +29,9 @@ sudo pip install virtualenv && virtualenv venv && . venv/bin/activate
 ```
 pip install -r requirements.txt
 ```
-* запускаем бэк сервер
-```
-python manage.py runserver 127.0.0.1:8000
-```
-* заходим
-```
-http://127.0.0.1:8000/
-```
-* должна быть нарисована ракета 
-```
-The install worked successfully! Congratulations!
-You are seeing this page because DEBUG=True is in your settings file and you have not configured any URLs.
-```
 * подключаем БД Postgres
 ```
 sudo apt update && sudo apt install postgresql postgresql-contrib
-```
-* драйвер для подключения postgres к Django
-```
-pip install psycopg2-binary
 ```
 * заходим в консоль Postgres
 ```
@@ -62,25 +45,25 @@ CREATE DATABASE august_sender;
 ```
 ctrl+z
 ```
-* изменяем настройки в config/settings.py
-```python
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'august_sender',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }
-}
-```
 * запускаем миграции для Django
 ```
 python manage.py makemigrations
 ```
 ```
 python manage.py migrate
+```
+* запускаем бэк сервер
+```
+python manage.py runserver 127.0.0.1:8000
+```
+* заходим
+```
+http://127.0.0.1:8000/
+```
+* должна быть нарисована ракета 
+```
+The install worked successfully! Congratulations!
+You are seeing this page because DEBUG=True is in your settings file and you have not configured any URLs.
 ```
 * теперь надо в корне проекта создать папку frontend и развернуть там Реакт
 ```
