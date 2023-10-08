@@ -69,3 +69,33 @@ You are seeing this page because DEBUG=True is in your settings file and you hav
 ```
 mkdir frontend
 ```
+### Подключаем Doker
+*
+```
+https://docs.docker.com/engine/install/ubuntu/
+```
+*
+```
+curl -fsSL https://get.docker.com -o get-docker.sh
+sudo sh get-docker.sh
+```
+```
+cd frontend
+```
+```
+docker build . -t react
+```
+```
+docker run -p 3000:3000 --rm --name react-container -d react
+```
+```
+http://127.0.0.1:3000/
+```
+* остановить сервер
+```
+docker stop react-container
+```
+*
+```
+
+```
