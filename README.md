@@ -11,15 +11,6 @@ CRM
 ```
 https://www.docker.com/get-started/
 ```
-* контейнер с Django
-```
-docker build . -t django:4.2.4
-```
-```
-docker run -p 8000:8000 --rm --name django-container -d django:4.2.4
-```
-
-
 * контейнер с Postgres
 ```
 docker pull postgres:14.9
@@ -31,13 +22,23 @@ docker run --name postgres-container -e POSTGRES_PASSWORD=postgres -d -p 5432:54
 docker exec -it postgres-container bash
 ```
 ```
-psql -U postgres
-```
-```
 CREATE DATABASE august_sender;
 ```
 
-
+* контейнер с Django
+```
+docker build . -t django:4.2.4
+```
+```
+docker run -p 8000:8000 --rm --name django-container -d django:4.2.4
+```
+```
+http://0.0.0.0:8000/
+```
+* если нужно зайти в контейнер
+```
+docker exec -it django-container /bin/bash
+```
 
 * контейнер с React
 ```
@@ -49,7 +50,6 @@ docker build . -t react
 ```
 docker run -p 3000:3000 --rm --name react-container -d react
 ```
-*
 ```
-
+http://0.0.0.0:3000/
 ```
