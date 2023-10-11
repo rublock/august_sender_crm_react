@@ -13,11 +13,32 @@ https://www.docker.com/get-started/
 ```
 * контейнер с Django
 ```
-docker build . -t django
+docker build . -t django:4.2.4
 ```
 ```
-docker run -p 8000:8000 django
+docker run -p 8000:8000 --rm --name django-container -d django:4.2.4
 ```
+
+
+* контейнер с Postgres
+```
+docker pull postgres:14.9
+```
+```
+docker run --name postgres-container -e POSTGRES_PASSWORD=postgres -d -p 5432:5432 postgres:14.9
+```
+```
+docker exec -it postgres-container bash
+```
+```
+psql -U postgres
+```
+```
+CREATE DATABASE august_sender;
+```
+
+
+
 * контейнер с React
 ```
 cd frontend
