@@ -12,6 +12,14 @@ services:
         ports:
             - "5432:5432"
 
+    react:
+        image: react:latest
+        build:
+            context: ./frontend
+        container_name: react-container
+        ports:
+            - "3000:3000"
+
     mainapp:
         image: django:4.2.4
         container_name: django-container
