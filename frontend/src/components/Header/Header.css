@@ -1,0 +1,18 @@
+.header {
+  height: 50px;
+  background-color: #1b64a1;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: white;
+  text-align: right;
+}
+
+.header__link {
+  color: #fff;
+}
+
+.header__login:hover {
+  color: #ddd;
+  cursor: pointer;
+}
