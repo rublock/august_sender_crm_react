@@ -1,10 +1,10 @@
-FROM python:3.10.12
+FROM python:3.11-slim
 
-RUN mkdir app
-WORKDIR app
+WORKDIR /app
 
-ADD . /app/
-
+COPY . /app/
+RUN apt-get update && apt-get install -y curl && apt-get clean
 RUN pip install -r requirements.txt
 
-CMD gunicorn mainapp.wsgi:application -b 0.0.0.0:8000
+CMD python manage.py migrate \
+    && python manage.py runserver 0.0.0.0:8000

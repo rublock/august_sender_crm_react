@@ -11,24 +11,18 @@ CRM
 ```
 https://www.docker.com/get-started/
 ```
-* контейнер с Django
+* контейнер с Postgres
 ```
-docker build . -t django
-```
-```
-docker run -p 8000:8000 django
-```
-* контейнер с React
-```
-cd frontend
-```
-```
-docker build . -t react
-```
-```
-docker run -p 3000:3000 --rm --name react-container -d react
-```
-*
+docker-compose up -d postgres
 ```
 
+* контейнер с Django
 ```
+docker-compose up -d mainapp
+```
+* если нужно зайти в контейнер
+```
+docker exec -it django-container /bin/bash
+```
+
+* контейнер с React
