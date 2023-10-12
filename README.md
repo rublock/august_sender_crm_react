@@ -11,6 +11,7 @@ CRM
 ```
 https://www.docker.com/get-started/
 ```
+
 * контейнер с Postgres
 ```
 docker-compose up -d postgres
@@ -26,3 +27,6 @@ docker exec -it django-container /bin/bash
 ```
 
 * контейнер с React
+```
+docker-compose up -d react
+```
