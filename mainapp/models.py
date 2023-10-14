@@ -2,6 +2,7 @@ from django.db import models
 
 
 class Client(models.Model):
+    objects = None
     name = models.CharField(verbose_name="ФИО", max_length=100)
     contact = models.TextField(verbose_name="Контакт", blank=True, max_length=200)
     where_from = models.TextField(verbose_name="Источник заказа", blank=True, max_length=200)
