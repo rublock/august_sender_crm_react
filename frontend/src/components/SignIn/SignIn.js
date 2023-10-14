@@ -22,7 +22,7 @@ export default function SignIn() {
     event.preventDefault()
     const data = new FormData(event.currentTarget)
     axios
-      .post('http://localhost:8000/admin', {
+      .post('http://localhost:8000/signin/', {
         email: data.get('email'),
         password: data.get('password'),
       })
